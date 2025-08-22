@@ -1,23 +1,17 @@
 package script;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.AddEmployee;
 import pages.DashBoardPage;
 import pages.LoginPage;
-import utils.Screenshot;
+import pages.MyInforPage;
 
-import static org.testng.Assert.assertTrue;
-
-public class AddemployeeTest {
+public class Compareinfo {
     private WebDriver driver;
-//    public AddemployeeTest(){
+    //    public AddemployeeTest(){
 //
 //    }
     @BeforeClass
@@ -25,7 +19,7 @@ public class AddemployeeTest {
         driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        sleep(100);
+        sleep(5000);
     }
 
     @Test
@@ -35,22 +29,18 @@ public class AddemployeeTest {
         System.out.println("Đăng nhập thành công");
         sleep(5000);
         DashBoardPage dashBoardPage=new DashBoardPage(driver);
-        dashBoardPage.gotoPimPage();
-        System.out.println("Chuyển sang trang PIM");
+        dashBoardPage.gotoMyInfoPage();
+        System.out.println("Chuyển sang trang Info");
         sleep(5000);
-        AddEmployee addemployee=new AddEmployee(driver);
-        String firstname="hello";
-        String lastname="hi";
-        addemployee.goToAddEmployee();
-        System.out.println("chuyển trang thành công");
+        MyInforPage myInforPage=new MyInforPage(driver);
+        String fullname= myInforPage.getInfor();
+        String displayname=myInforPage.getDisplayName();
         sleep(5000);
-        String id=addemployee.employ(firstname,lastname);
-        boolean verifyEmployee=addemployee.verifyEmploy(firstname,lastname,id);
-        if(verifyEmployee){
-            System.out.println("trùng khớp");
+        if(fullname.equalsIgnoreCase(displayname)){
+            System.out.println("Kết quả trùng khớp");
         }
         else {
-            System.out.println("không trùng khớp");
+            System.out.println("Kết quả không trùng khớp");
         }
     }
 
@@ -66,10 +56,5 @@ public class AddemployeeTest {
 //    public void clear(){
 //        driver.quit();
 //    }
-    @AfterMethod
-    public void takeScreenshotOnFailure(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            Screenshot.capturescreenshot(driver, "Addemployee");
-        }
-    }
 }
+
