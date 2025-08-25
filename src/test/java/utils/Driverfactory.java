@@ -5,9 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Driverfactory {
-    public  static WebDriver getDriver(String browser){
+    public  static WebDriver getDriver(){
+        String browserName=System.getProperty("browser","chrome");
         WebDriver driver;
-        switch (browser.toLowerCase()){
+        switch (browserName.toLowerCase()){
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 driver=new ChromeDriver();

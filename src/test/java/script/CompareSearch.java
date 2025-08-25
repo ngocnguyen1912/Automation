@@ -17,7 +17,7 @@ public class CompareSearch {
     public void setUp(){
 //        driver=new ChromeDriver();
 //        driver.manage().window().maximize();
-        driver= Driverfactory.getDriver("chrome");
+        driver= Driverfactory.getDriver();
         sleep(1000);
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         sleep(5000);

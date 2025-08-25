@@ -1,0 +1,33 @@
+package script;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import utils.Screenshot;
+
+public class BaseTest {
+    protected WebDriver driver;
+    @BeforeClass
+    public void setUp(){
+        driver=new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        sleep(5000);
+    }
+    protected void sleep(int time){
+        try{
+            Thread.sleep(time);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    @AfterMethod
+    public void takeScreenshotOnFailure(ITestResult result) {
+        if (ITestResult.FAILURE == result.getStatus()) {
+            Screenshot.capturescreenshot(driver, "Addemployee");
+        }
+    }
+}
