@@ -1,5 +1,7 @@
 package script;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -11,6 +13,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 public class LoginTest extends BaseTest{
+    private static final Logger logger= LogManager.getLogger(LoginTest.class);
     @DataProvider(name = "loginData")
     public Object[][] LoginData() {
         String filePath = "src/test/java/resources/login.xlsx";
@@ -40,11 +43,12 @@ public class LoginTest extends BaseTest{
     @Test(dataProvider = "loginData")
     public void loginTest(String username, String password, String expectedResult) {
         try{
+            logger.info("Đang test với username: {}",username);
             LoginPage loginPage = new LoginPage(driver);
             loginPage.login(username, password);
             Thread.sleep(2000);
             Boolean isLogged = driver.getCurrentUrl().contains("dashboard");
-            System.out.println(isLogged);
+            logger.info("kết quả : {}",isLogged);
 //            if (Boolean.parseBoolean(expectedResult) == isLogged) {
 //                System.out.println("test pass");
 //            } else {
@@ -52,6 +56,8 @@ public class LoginTest extends BaseTest{
 //            }
             Assert.assertEquals(isLogged,Boolean.parseBoolean(expectedResult),"không đúng kết quả");
             System.out.println(" đúng");
+            logger.info("Test pass");
+
         }
         catch (Exception e){
             throw new RuntimeException(e);

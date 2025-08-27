@@ -6,8 +6,8 @@
 
     <!-- Khai báo Listener sẽ chạy trong quá trình test -->
     <listeners>
-        <listener class-name="Listener.SimpleListener"/>
-
+<!--        <listener class-name="Listener.SimpleListener"/>-->
+        <listener class-name="Listener.ExtentReportListener"/>
     </listeners>
 
     <!-- Nhóm test Login -->
