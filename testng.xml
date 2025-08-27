@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- Tổng quan: file testng.xml dùng để gom nhóm test, listener, suite -->
+<suite name="OrangeHRM Test Suite">
+
+    <!-- Khai báo Listener sẽ chạy trong quá trình test -->
+    <listeners>
+        <listener class-name="Listener.SimpleListener"/>
+
+    </listeners>
+
+    <!-- Nhóm test Login -->
+    <test name="LoginTests">
+        <classes>
+            <!-- class LoginTest nằm trong package script -->
+            <class name="script.LoginTest"/>
+        </classes>
+    </test>
+    <test name="AddemployeeTest">
+        <classes>
+            <!-- class LoginTest nằm trong package script -->
+            <class name="script.AddemployeeTest"/>
+        </classes>
+    </test>
+    <!-- Nhóm test AddEmployee (có thể bật khi cần) -->
+    <!--
+    <test name="AddEmployeeTest">
+        <classes>
+            <class name="script.AddEmployeeTest"/>
+        </classes>
+    </test>
+    -->
+
+</suite>

@@ -55,9 +55,6 @@ public class AddemployeeTest extends BaseTest {
     }
 
 
-//    @AfterClass
-//    public void clear(){
-//        driver.quit();
-//    }
+
 
 }

@@ -13,20 +13,23 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Screenshot {
-    public static void capturescreenshot(WebDriver driver,String namePrefix){
+    public static String capturescreenshot(WebDriver driver,String namePrefix){
         if(!(driver instanceof TakesScreenshot)){
             System.out.println("Driver không hỡ trợ");
         }
         File scrFile=((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String timeStamp=new SimpleDateFormat("yyyyMMĐ_HHmmss").format(new Date());
-        File destFile=new File("screenshot/"+namePrefix+ "_"+timeStamp+".png");
+        File destDir= new File("report/screenshots");
+        File destFile=new File(destDir,namePrefix+ "_"+timeStamp+".png");
         try{
-            Files.createDirectories(destFile.getParentFile().toPath());
+            Files.createDirectories(destDir.toPath());
             Files.copy(scrFile.toPath(),destFile.toPath());
             System.out.println("Đã chụp màn hình");
+            return "screenshots"+destFile.getName();
         }
         catch (IOException e){
             System.out.println("lỗi lưu ảnh");
+            return null;
         }
     }
 }
