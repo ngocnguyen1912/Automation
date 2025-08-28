@@ -3,6 +3,7 @@ package script;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -10,7 +11,7 @@ import utils.Screenshot;
 
 public class BaseTest {
     public WebDriver driver;
-    @BeforeMethod
+    @BeforeClass
     public void setUp(){
         driver=new ChromeDriver();
         driver.manage().window().maximize();
@@ -30,7 +31,12 @@ public class BaseTest {
         if (ITestResult.FAILURE == result.getStatus()) {
             Screenshot.capturescreenshot(driver, "Addemployee");
         }
-        driver.quit();
+    }
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit(); // chỉ quit 1 lần sau khi chạy hết cả class
+        }
     }
 
 }
