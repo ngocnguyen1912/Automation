@@ -23,6 +23,12 @@
             <class name="script.AddemployeeTest"/>
         </classes>
     </test>
+    <test name="Compareinfo">
+        <classes>
+            <!-- class LoginTest nằm trong package script -->
+            <class name="script.Compareinfo"/>
+        </classes>
+    </test>
     <!-- Nhóm test AddEmployee (có thể bật khi cần) -->
     <!--
     <test name="AddEmployeeTest">

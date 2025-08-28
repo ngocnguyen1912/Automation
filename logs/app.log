@@ -57,3 +57,56 @@
 [2025-08-27 16:19:24] INFO  script.LoginTest - Đang test với username: Admin
 [2025-08-27 16:19:26] INFO  script.LoginTest - kết quả : false
 [2025-08-27 16:19:26] INFO  script.LoginTest - Test pass
+[2025-08-28 15:44:53] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:44:55] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:44:55] INFO  script.LoginTest - kết quả : true
+[2025-08-28 15:44:55] INFO  script.LoginTest - Test pass
+[2025-08-28 15:44:57] INFO  script.LoginTest - kết quả : true
+[2025-08-28 15:44:57] INFO  script.LoginTest - Test pass
+[2025-08-28 15:45:04] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:45:06] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:45:06] INFO  script.LoginTest - kết quả : false
+[2025-08-28 15:45:06] INFO  script.LoginTest - Test pass
+[2025-08-28 15:45:09] INFO  script.LoginTest - kết quả : false
+[2025-08-28 15:45:09] INFO  script.LoginTest - Test pass
+[2025-08-28 15:45:16] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:45:18] INFO  script.LoginTest - kết quả : false
+[2025-08-28 15:45:18] INFO  script.LoginTest - Test pass
+[2025-08-28 15:45:20] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:45:22] INFO  script.LoginTest - kết quả : false
+[2025-08-28 15:45:22] INFO  script.LoginTest - Test pass
+[2025-08-28 15:45:27] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:45:30] INFO  script.LoginTest - kết quả : false
+[2025-08-28 15:45:30] INFO  script.LoginTest - Test pass
+[2025-08-28 15:45:32] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:45:34] INFO  script.LoginTest - kết quả : false
+[2025-08-28 15:45:34] INFO  script.LoginTest - Test pass
+[2025-08-28 15:50:28] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:50:30] INFO  script.LoginTest - kết quả : true
+[2025-08-28 15:50:30] INFO  script.LoginTest - Test pass
+[2025-08-28 15:50:38] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:50:40] INFO  script.LoginTest - kết quả : false
+[2025-08-28 15:50:40] INFO  script.LoginTest - Test pass
+[2025-08-28 15:50:50] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:50:52] INFO  script.LoginTest - kết quả : false
+[2025-08-28 15:50:52] INFO  script.LoginTest - Test pass
+[2025-08-28 15:51:01] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 15:51:04] INFO  script.LoginTest - kết quả : false
+[2025-08-28 15:51:04] INFO  script.LoginTest - Test pass
+[2025-08-28 16:01:00] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 16:01:02] INFO  script.LoginTest - kết quả : true
+[2025-08-28 16:01:02] INFO  script.LoginTest - Test pass
+[2025-08-28 16:01:12] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 16:01:14] INFO  script.LoginTest - kết quả : false
+[2025-08-28 16:01:14] INFO  script.LoginTest - Test pass
+[2025-08-28 16:01:24] INFO  script.LoginTest - Đang test với username: admin
+[2025-08-28 16:01:27] INFO  script.LoginTest - kết quả : true
+[2025-08-28 16:01:36] INFO  script.LoginTest - Đang test với username: Admin
+[2025-08-28 16:01:38] INFO  script.LoginTest - kết quả : false
+[2025-08-28 16:01:38] INFO  script.LoginTest - Test pass
+[2025-08-28 16:01:48] INFO  script.LoginTest - Đang test với username: 
+[2025-08-28 16:01:50] INFO  script.LoginTest - kết quả : false
+[2025-08-28 16:01:50] INFO  script.LoginTest - Test pass
+[2025-08-28 16:02:00] INFO  script.LoginTest - Đang test với username: 
+[2025-08-28 16:02:02] INFO  script.LoginTest - kết quả : false
+[2025-08-28 16:02:02] INFO  script.LoginTest - Test pass

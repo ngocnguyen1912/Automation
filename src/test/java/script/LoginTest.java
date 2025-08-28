@@ -19,12 +19,22 @@ public class LoginTest extends BaseTest{
         String filePath = "src/test/java/resources/login.xlsx";
 
         String sheetName = "Sheet1";
+// Lấy tổng số dòng (bao gồm header)
+        int totalRows = Excel.getRowCount(filePath, sheetName);
+
+        // Bỏ dòng tiêu đề → số dòng data
+        int rowCount = totalRows - 1;
+
+        // Lấy số cột
+        int colCount = Excel.getColCount(filePath, sheetName);
+
+        Object[][] data = new Object[rowCount][colCount];
 
         // tạo biến số dòng dữ liệu (không bao gồm dòng tiêu đề)
-        int rowCount = 4;
+//        int rowCount = 4;
 
         // tạo mảng 2 chiều để lưu dữ liệu
-        Object[][] data = new Object[rowCount][3];
+//        Object[][] data = new Object[rowCount][3];
 
         for (int i = 0; i < rowCount; i++) {
             // lấy dữ liệu cho username
