@@ -11,7 +11,7 @@ import utils.Screenshot;
 
 public class BaseTest {
     public WebDriver driver;
-    @BeforeClass
+    @BeforeMethod
     public void setUp(){
         driver=new ChromeDriver();
         driver.manage().window().maximize();
@@ -31,12 +31,13 @@ public class BaseTest {
         if (ITestResult.FAILURE == result.getStatus()) {
             Screenshot.capturescreenshot(driver, "Addemployee");
         }
+        driver.quit();
     }
-    @AfterClass
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit(); // chỉ quit 1 lần sau khi chạy hết cả class
-        }
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        if (driver != null) {
+//            driver.quit(); // chỉ quit 1 lần sau khi chạy hết cả class
+//        }
+//    }
 
 }

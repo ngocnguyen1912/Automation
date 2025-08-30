@@ -17,14 +17,14 @@ public class AdminPage {
         driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
     }
     public boolean isUserFound(String userExpected){
-        List<WebElement> rows=driver.findElements(By.xpath("//div[@class='oxd-table-body']"));
+        List<WebElement> rows=driver.findElements(By.xpath(".//div[@class='oxd-table-body']"));
+
         for (WebElement row:rows){
-            String actuallyUserName = row.findElement(By.xpath(".//div[@role='rowgroup']//div[1]//div[1]//div[2]")).getText();
+            System.out.println(row);
+            String actuallyUserName = row.findElement(By.xpath(".//div[@class='oxd-table-body']//div[1]//div[1]//div[2]")).getText();
+            System.out.println(actuallyUserName);
             if(actuallyUserName.equalsIgnoreCase(userExpected)){
                 return true;
-            }
-            else{
-                return false;
             }
 
         }

@@ -25,7 +25,6 @@ public class AddemployeeTest extends BaseTest {
     @DataProvider(name = "EmployeeData")
     public Object[][] EmployeeData() {
         String filePath = "src/test/java/resources/login.xlsx";
-
         String sheetName = "Sheet2";
 // Lấy tổng số dòng (bao gồm header)
         int totalRows = Excel.getRowCount(filePath, sheetName);
@@ -46,7 +45,7 @@ public class AddemployeeTest extends BaseTest {
         // trả dữ liệu ra ngoài
         return data;
     }
-    @BeforeClass
+    @BeforeMethod
     public void loginOnce() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("Admin", "admin123");

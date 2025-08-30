@@ -2,6 +2,7 @@ package script;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 public class LoginTest extends BaseTest{
+    WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
     private static final Logger logger= LogManager.getLogger(LoginTest.class);
     @DataProvider(name = "loginData")
     public Object[][] LoginData() {
@@ -56,6 +58,7 @@ public class LoginTest extends BaseTest{
             logger.info("Đang test với username: {}",username);
             LoginPage loginPage = new LoginPage(driver);
             loginPage.login(username, password);
+
             Thread.sleep(2000);
             Boolean isLogged = driver.getCurrentUrl().contains("dashboard");
             logger.info("kết quả : {}",isLogged);
