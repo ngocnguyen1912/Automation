@@ -23,25 +23,18 @@
             <class name="script.AddemployeeTest"/>
         </classes>
     </test>
-<!--    <test name="Compareinfo">-->
-<!--        <classes>-->
-<!--            &lt;!&ndash; class LoginTest nằm trong package script &ndash;&gt;-->
-<!--            <class name="script.Compareinfo"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="CompareSearch">-->
-<!--        <classes>-->
-<!--            &lt;!&ndash; class LoginTest nằm trong package script &ndash;&gt;-->
-<!--            <class name="script.CompareSearch"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-    <!-- Nhóm test AddEmployee (có thể bật khi cần) -->
-    <!--
-    <test name="AddEmployeeTest">
+    <test name="Compareinfo">
         <classes>
-            <class name="script.AddEmployeeTest"/>
+            <!-- class LoginTest nằm trong package script -->
+            <class name="script.Compareinfo"/>
         </classes>
     </test>
-    -->
+    <test name="CompareSearch">
+        <classes>
+            <!-- class LoginTest nằm trong package script -->
+            <class name="script.CompareSearch"/>
+        </classes>
+    </test>
+
 
 </suite>
