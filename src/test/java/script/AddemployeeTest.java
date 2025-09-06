@@ -1,9 +1,12 @@
 package script;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.AddEmployee;
@@ -22,6 +25,7 @@ public class AddemployeeTest extends BaseTest {
 //    }
 
     WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+//    private static final Logger employ= LogManager.getLogger(AddemployeeTest.class);
     @DataProvider(name = "EmployeeData")
     public Object[][] EmployeeData() {
         String filePath = "src/test/java/resources/login.xlsx";
@@ -47,6 +51,13 @@ public class AddemployeeTest extends BaseTest {
     }
     @BeforeMethod
     public void loginOnce() {
+
+    }
+    @Test(dataProvider = "EmployeeData")
+    public void testSuccessfullLogin(String lastname, String firstname) {
+
+//        Login vào
+//        employ.info("đang test với: {} ",firstname);
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("Admin", "admin123");
         System.out.println("Đăng nhập thành công");
@@ -54,14 +65,9 @@ public class AddemployeeTest extends BaseTest {
         DashBoardPage dashBoardPage=new DashBoardPage(driver);
         dashBoardPage.gotoPimPage();
         System.out.println("Chuyển sang trang PIM");
-        sleep(2000);
-    }
-    @Test(dataProvider = "EmployeeData")
-    public void testSuccessfullLogin(String lastname, String firstname) {
-        DashBoardPage dashBoardPage=new DashBoardPage(driver);
-        dashBoardPage.gotoPimPage();
-        System.out.println("Chuyển sang trang PIM");
         sleep(5000);
+
+//        tiến hành thêm user
         AddEmployee addemployee=new AddEmployee(driver);
 //        String firstname="hello";
 //        String lastname="hi";
@@ -72,6 +78,8 @@ public class AddemployeeTest extends BaseTest {
         sleep(2000);
         System.out.println("thêm thành công");
         boolean verifyEmployee=addemployee.verifyEmploy(firstname,lastname,id);
+//        employ.info("kết quả : {} ",verifyEmployee);
+//        Assert.assertEquals(verifyEmployee,);
         if(verifyEmployee){
             System.out.println("trùng khớp");
         }
